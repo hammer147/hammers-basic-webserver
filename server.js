@@ -31,15 +31,21 @@ app.use((req, res, next) => {
 });
 
 app.get('/', (req, res) => {
-    res.render('home.hbs', {
+    res.render('home', {
         pageTitle: 'Home Page',
         welcomeMessage: 'Welcome to my website!'
     });
 });
 
 app.get('/about', (req, res) => {
-    res.render('about.hbs', {
+    res.render('about', {
         pageTitle: 'About Page'
+    });
+});
+
+app.get('/projects', (req, res) => {
+    res.render('projects', {
+        pageTitle: 'Projects Page'
     });
 });
 
@@ -49,4 +55,4 @@ app.get('/bad', (req, res) => {
     });
 });
 
-app.listen(port, () => `Server is up on port ${port}`);
+app.listen(port, () => console.log(`Server is up on port ${port}`));
