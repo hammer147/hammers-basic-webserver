@@ -12,9 +12,8 @@ hbs.registerHelper('screamIt', (text) => text.toUpperCase());
 
 app.set('view engine', 'hbs');
 
-// app.use((req, res, next) => {
-// 	res.render('maintenance');
-// });
+// this has to be the FIRST middleware!
+// app.use((req, res, next) => res.render('maintenance'));
 
 app.use(express.static(__dirname + '/public'));
 
